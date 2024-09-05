@@ -1,5 +1,4 @@
-
-# YouTube Transcript
+# YouTube Transcript Fetcher
 
 This is a simple web application that allows users to fetch and display transcripts from YouTube videos.
 
@@ -45,6 +44,12 @@ This is a simple web application that allows users to fetch and display transcri
 1. Enter a valid YouTube video URL in the input field.
 2. Click the "Fetch Transcript" button.
 3. The transcript will be displayed on the page.
+
+## Demo
+
+Here's a quick demonstration of how the YouTube Transcript Fetcher works:
+
+![Demo Video](assets/demo.mov)
 
 ## Project Structure
 
