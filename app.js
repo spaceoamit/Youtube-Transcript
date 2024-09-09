@@ -16,7 +16,16 @@ app.post('/fetch-transcript', (req, res) => {
   YoutubeTranscript.fetchTranscript(youtubeUrl)
     .then(transcript => {
       const fullText = transcript.map(entry => entry.text).join(' ');
-      res.send(fullText);
+        // Replace common ASCII character entities with their corresponding characters
+        const decodedText = fullText
+        .replace(/&amp;#39;/g, "'")
+        .replace(/&amp;quot;/g, '"')
+        .replace(/&amp;lt;/g, '<')
+        .replace(/&amp;gt;/g, '>')
+        .replace(/&amp;amp;/g, '&');
+
+
+      res.send(decodedText);
     })
     .catch(error => {
       res.status(500).send('Error fetching transcript: ' + error.message);
